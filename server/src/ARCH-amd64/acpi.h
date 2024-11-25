@@ -423,7 +423,7 @@ protected:
     memcpy(t->Signature, ACPI_SIG_RSDP, sizeof(t->Signature));
     wr.add_checksum(&t->Checksum, t, Rsdp_v1_size);
     wr.write_identifier(t->OemId, "L4RE", ACPI_OEM_ID_SIZE);
-    t->Revision = 2; // ACPI 2.0+
+    t->Revision = 1; // ACPI 2.0+
     wr.add_table_ref(&t->RsdtPhysicalAddress, Table::Rsdt);
     t->Length = Rsdp_size;
     t->XsdtPhysicalAddress = 0; // For now we don't implement the XSDT.
